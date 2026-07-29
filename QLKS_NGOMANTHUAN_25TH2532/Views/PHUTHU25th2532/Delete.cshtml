@@ -1,0 +1,22 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Phuthu25th2532
+@{
+    ViewData["Title"] = "Xóa khoản Phụ thu";
+}
+<h1>Xóa Phụ thu</h1>
+<h3>Bạn có chắc chắn muốn xóa khoản phụ thu này không?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Phụ Thu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.MaPhuThu)</dd>
+        <dt class="col-sm-3">Lý Do Phụ Thu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.LyDoPhuThu)</dd>
+        <dt class="col-sm-3">Số Tiền Phụ Thu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.SoTienPhuThu)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaPhuThu" />
+        <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </form>
+</div>

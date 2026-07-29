@@ -1,0 +1,22 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Khuyenmai25th2532
+@{
+    ViewData["Title"] = "Chi tiết Khuyến mãi";
+}
+<h1>Chi tiết Chương trình Khuyến mãi</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Khuyến Mãi</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.MaKhuyenMai)</dd>
+        <dt class="col-sm-3">Tên Khuyến Mãi</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.TenKhuyenMai)</dd>
+        <dt class="col-sm-3">Ngày Bắt Đầu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NgayBatDau)</dd>
+        <dt class="col-sm-3">Ngày Kết Thúc</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NgayKetThuc)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaKhuyenMai" class="btn btn-warning">Sửa</a> |
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</div>

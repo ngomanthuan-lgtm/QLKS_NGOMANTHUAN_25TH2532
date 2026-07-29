@@ -1,0 +1,43 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Hoadon25th2532
+
+@{
+    ViewData["Title"] = "Tạo mới Hóa đơn";
+}
+
+<h1>Tạo mới Hóa đơn</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="NgayLap" class="control-label">Ngày Lập</label>
+                <input asp-for="NgayLap" class="form-control" type="datetime-local" />
+                <span asp-validation-for="NgayLap" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="TongTienPhong" class="control-label">Tổng Tiền Phòng</label>
+                <input asp-for="TongTienPhong" class="form-control" />
+                <span asp-validation-for="TongTienPhong" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="TongTienDichVu" class="control-label">Tổng Tiền Dịch Vụ</label>
+                <input asp-for="TongTienDichVu" class="form-control" />
+                <span asp-validation-for="TongTienDichVu" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="ThanhTien" class="control-label">Thành Tiền</label>
+                <input asp-for="ThanhTien" class="form-control" />
+                <span asp-validation-for="ThanhTien" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="MaChiTietDat" class="control-label">Mã Chi Tiết Đặt Phòng</label>
+                <select asp-for="MaChiTietDat" class="form-control" asp-items="ViewBag.MaChiTietDat"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu Lại" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>

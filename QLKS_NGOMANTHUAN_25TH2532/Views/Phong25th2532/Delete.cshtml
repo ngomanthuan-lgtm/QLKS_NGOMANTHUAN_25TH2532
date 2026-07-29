@@ -1,0 +1,43 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Phong25th2532
+
+@{
+    ViewData["Title"] = "Xóa phòng";
+}
+
+<div class="container mt-4">
+    <div class="card border-danger shadow">
+        <div class="card-header bg-danger text-white">
+            <h3 class="card-title mb-0"><i class="bi bi-exclamation-triangle-fill"></i> Xác Nhận Xóa Phòng</h3>
+        </div>
+        <div class="card-body">
+            <h4 class="text-danger mb-4">Bạn có chắc chắn muốn xóa phòng này khỏi hệ thống không? Hành động này không thể hoàn tác!</h4>
+
+            <dl class="row font-medium" style="font-size: 1.1rem; line-height: 2;">
+                <dt class="col-sm-3 text-muted">Mã phòng:</dt>
+                <dd class="col-sm-9 fw-bold text-dark">@Model.MaPhong</dd>
+
+                <dt class="col-sm-3 text-muted">Số phòng:</dt>
+                <dd class="col-sm-9 fw-bold text-dark">Phòng @Model.SoPhong</dd>
+
+                <dt class="col-sm-3 text-muted">Loại phòng:</dt>
+                <dd class="col-sm-9 text-dark">@(Model.MaLoaiPhongNavigation?.TenLoaiPhong ?? "Chưa thiết lập")</dd>
+
+                <dt class="col-sm-3 text-muted">Trạng thái:</dt>
+                <dd class="col-sm-9">
+                    <span class="badge bg-secondary p-2">@(Model.MaTrangThaiNavigation?.TenTrangThai ?? "Không xác định")</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="MaPhong" />
+                <button type="submit" class="btn btn-danger me-2">
+                    <i class="bi bi-trash-fill"></i> Xác nhận xóa
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left-circle"></i> Hủy và quay lại
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

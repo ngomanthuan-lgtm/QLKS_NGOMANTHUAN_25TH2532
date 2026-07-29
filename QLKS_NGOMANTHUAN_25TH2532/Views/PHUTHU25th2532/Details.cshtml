@@ -1,0 +1,20 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Phuthu25th2532
+@{
+    ViewData["Title"] = "Chi tiết Phụ thu";
+}
+<h1>Chi tiết khoản Phụ thu</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Phụ Thu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.MaPhuThu)</dd>
+        <dt class="col-sm-3">Lý Do Phụ Thu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.LyDoPhuThu)</dd>
+        <dt class="col-sm-3">Số Tiền Phụ Thu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.SoTienPhuThu)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaPhuThu" class="btn btn-warning">Sửa</a> |
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</div>

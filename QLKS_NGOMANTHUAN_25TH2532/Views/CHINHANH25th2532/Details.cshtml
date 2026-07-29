@@ -1,0 +1,22 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Chinhanh25th2532
+@{
+    ViewData["Title"] = "Chi tiết Chi nhánh";
+}
+<h1>Chi tiết Chi nhánh</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Chi Nhánh</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.MaChiNhanh)</dd>
+        <dt class="col-sm-3">Tên Chi Nhánh</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.TenChiNhanh)</dd>
+        <dt class="col-sm-3">Địa Chỉ</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DiaChi)</dd>
+        <dt class="col-sm-3">Số Điện Thoại</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.SoDienThoai)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaChiNhanh" class="btn btn-warning">Sửa</a> |
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</div>

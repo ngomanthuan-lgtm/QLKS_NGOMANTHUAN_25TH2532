@@ -1,0 +1,45 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Phong25th2532
+
+@{
+    ViewData["Title"] = "Chi tiết phòng";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title mb-0"><i class="bi bi-info-circle-fill"></i> Chi Tiết Thông Tin Phòng</h3>
+        </div>
+        <div class="card-body">
+            <dl class="row font-medium" style="font-size: 1.1rem; line-height: 2;">
+                <dt class="col-sm-3 text-muted">Mã phòng:</dt>
+                <dd class="col-sm-9 fw-bold text-dark">@Model.MaPhong</dd>
+
+                <dt class="col-sm-3 text-muted">Số phòng:</dt>
+                <dd class="col-sm-9 fw-bold text-dark">Phòng @Model.SoPhong</dd>
+
+                <dt class="col-sm-3 text-muted">Loại phòng:</dt>
+                <dd class="col-sm-9 text-dark">@(Model.MaLoaiPhongNavigation?.TenLoaiPhong ?? "Chưa thiết lập")</dd>
+
+                <dt class="col-sm-3 text-muted">Trạng thái hiện tại:</dt>
+                <dd class="col-sm-9">
+                    @if (Model.MaTrangThaiNavigation?.TenTrangThai == "Trống" || Model.MaTrangThaiNavigation?.TenTrangThai == "Sẵn sàng")
+                    {
+                        <span class="badge bg-success p-2">@Model.MaTrangThaiNavigation.TenTrangThai</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger p-2">@(Model.MaTrangThaiNavigation?.TenTrangThai ?? "Không xác định")</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model.MaPhong" class="btn btn-warning">
+                <i class="bi bi-pencil-square"></i> Chỉnh sửa
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Quay lại danh sách
+            </a>
+        </div>
+    </div>
+</div>

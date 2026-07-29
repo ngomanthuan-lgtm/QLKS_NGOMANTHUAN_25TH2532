@@ -1,0 +1,107 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Datphong25th2532
+
+@{
+    ViewData["Title"] = "Chi tiết phiếu đặt phòng";
+}
+
+<div class="container mt-2">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-dark text-white py-3">
+            <h4 class="card-title mb-0 d-flex align-items-center gap-2">
+                <i class="bi bi-file-earmark-text-fill text-warning"></i>
+                Chi Tiết Phiếu Đặt Phòng #@Model.MaDatPhong
+            </h4>
+        </div>
+
+        <div class="card-body p-4">
+            <div class="row">
+                <!-- Cột trái: Thông tin cá nhân người đặt -->
+                <div class="col-md-6 border-end pe-md-4">
+                    <h5 class="text-primary mb-4 border-bottom pb-2 d-flex align-items-center gap-2">
+                        <i class="bi bi-person-badge-fill"></i> Thông tin khách hàng
+                    </h5>
+
+                    <dl class="row">
+                        <dt class="col-sm-4 fw-semibold text-muted">Họ và tên:</dt>
+                        <dd class="col-sm-8 fw-bold text-dark">
+                            @(string.IsNullOrEmpty(Model.HoTenNguoiDat) ? "Chưa cập nhật" : Model.HoTenNguoiDat)
+                        </dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Ngày sinh:</dt>
+                        <dd class="col-sm-8 text-dark">
+                            @(Model.NgaySinh.HasValue ? Model.NgaySinh.Value.ToString("dd/MM/yyyy") : "---")
+                        </dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Số điện thoại:</dt>
+                        <dd class="col-sm-8 text-dark">
+                            @if (!string.IsNullOrEmpty(Model.SoDienThoai))
+                            {
+                                <a href="tel:@Model.SoDienThoai" class="text-decoration-none">
+                                    <i class="bi bi-telephone"></i> @Model.SoDienThoai
+                                </a>
+                            }
+                            else
+                            {
+                                <span>---</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Email:</dt>
+                        <dd class="col-sm-8 text-dark text-break">
+                            @if (!string.IsNullOrEmpty(Model.Email))
+                            {
+                                <a href="mailto:@Model.Email" class="text-decoration-none">
+                                    <i class="bi bi-envelope"></i> @Model.Email
+                                </a>
+                            }
+                            else
+                            {
+                                <span>---</span>
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Địa chỉ:</dt>
+                        <dd class="col-sm-8 text-dark">
+                            @(string.IsNullOrEmpty(Model.DiaChi) ? "---" : Model.DiaChi)
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- Cột phải: Thông tin phiếu đặt phòng -->
+                <div class="col-md-6 ps-md-4 mt-4 mt-md-0">
+                    <h5 class="text-primary mb-4 border-bottom pb-2 d-flex align-items-center gap-2">
+                        <i class="bi bi-info-circle-fill"></i> Chi tiết giao dịch
+                    </h5>
+
+                    <dl class="row">
+                        <dt class="col-sm-4 fw-semibold text-muted">Ngày lập phiếu:</dt>
+                        <dd class="col-sm-8 text-dark">
+                            <i class="bi bi-calendar3"></i> @(Model.NgayDat.HasValue ? Model.NgayDat.Value.ToString("dd/MM/yyyy HH:mm") : "---")
+                        </dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Tình trạng:</dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-info text-dark px-2.5 py-1.5 fw-medium">
+                                @(string.IsNullOrEmpty(Model.TinhTrangDat) ? "Chờ xử lý" : Model.TinhTrangDat)
+                            </span>
+                        </dd>
+
+                        <dt class="col-sm-4 fw-semibold text-muted">Tiền đặt cọc:</dt>
+                        <dd class="col-sm-8 text-success fw-bold fs-5">
+                            <i class="bi bi-cash-stack"></i> @(Model.TienDatCoc.HasValue ? string.Format("{0:N0} đ", Model.TienDatCoc.Value) : "0 đ")
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer bg-light py-3 d-flex justify-content-end gap-2">
+            <a asp-action="Edit" asp-route-id="@Model.MaDatPhong" class="btn btn-warning">
+                <i class="bi bi-pencil-square"></i> Chỉnh sửa phiếu
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-short"></i> Quay lại danh sách
+            </a>
+        </div>
+    </div>
+</div>

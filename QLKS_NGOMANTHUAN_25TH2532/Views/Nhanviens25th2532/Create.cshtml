@@ -1,0 +1,32 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Nhanvien25th2532
+@{
+    ViewData["Title"] = "Thêm Nhân viên";
+}
+<h1>Thêm mới Nhân viên</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="HoTen" class="control-label">Họ và Tên</label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="ChucVu" class="control-label">Chức Vụ</label>
+                <input asp-for="ChucVu" class="form-control" />
+                <span asp-validation-for="ChucVu" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Luong" class="control-label">Mức Lương</label>
+                <input asp-for="Luong" class="form-control" />
+                <span asp-validation-for="Luong" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu Lại" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>

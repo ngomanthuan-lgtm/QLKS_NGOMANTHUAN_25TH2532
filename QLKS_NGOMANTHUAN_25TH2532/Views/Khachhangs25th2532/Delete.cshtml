@@ -1,0 +1,24 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Khachhang25th2532
+@{
+    ViewData["Title"] = "Xóa hồ sơ khách hàng";
+}
+<h1>Xóa Khách hàng</h1>
+<h3>Bạn có chắc chắn muốn xóa vĩnh viễn khách hàng này không?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Họ và Tên</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.HoTen)</dd>
+        <dt class="col-sm-3">Số Điện Thoại</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.SoDienThoai)</dd>
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+        <dt class="col-sm-3">Số CCCD</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.SoCCCD)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaKhachHang" />
+        <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </form>
+</div>

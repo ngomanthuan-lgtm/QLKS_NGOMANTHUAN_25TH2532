@@ -1,0 +1,43 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Hoadon25th2532
+
+@{
+    ViewData["Title"] = "Chi tiết hóa đơn";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="card-title mb-0"><i class="bi bi-receipt"></i> Chi Tiết Hóa Đơn</h3>
+        </div>
+        <div class="card-body">
+            <dl class="row font-medium" style="font-size: 1.1rem; line-height: 2;">
+                <dt class="col-sm-4 text-muted">Mã hóa đơn:</dt>
+                <dd class="col-sm-8 fw-bold text-dark">@Model.MaHoaDon</dd>
+
+                <dt class="col-sm-4 text-muted">Ngày lập hóa đơn:</dt>
+                <dd class="col-sm-8 text-dark">@string.Format("{0:dd/MM/yyyy HH:mm}", Model.NgayLap)</dd>
+
+                <dt class="col-sm-4 text-muted">Tiền phòng:</dt>
+                <dd class="col-sm-8 text-dark fw-bold">@string.Format("{0:N0} VNĐ", Model.TongTienPhong)</dd>
+
+                <dt class="col-sm-4 text-muted">Tiền dịch vụ:</dt>
+                <dd class="col-sm-8 text-dark fw-bold">@string.Format("{0:N0} VNĐ", Model.TongTienDichVu)</dd>
+
+                <dt class="col-sm-4 text-muted">Mã chi tiết đặt phòng:</dt>
+                <dd class="col-sm-8 text-dark">@(Model.MaChiTietDat != null ? Model.MaChiTietDat.ToString() : "N/A")</dd>
+
+                <hr class="col-12" />
+                <dt class="col-sm-4 text-muted" style="font-size: 1.2rem;">Thành tiền thanh toán:</dt>
+                <dd class="col-sm-8 text-danger fw-bold" style="font-size: 1.4rem;">@string.Format("{0:N0} VNĐ", Model.ThanhTien)</dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light d-flex gap-2">
+            <a asp-action="Edit" asp-route-id="@Model.MaHoaDon" class="btn btn-warning">
+                <i class="bi bi-pencil-square"></i> Chỉnh sửa
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Quay lại danh sách
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Nhanvien25th2532
+@{
+    ViewData["Title"] = "Chi tiết Nhân viên";
+}
+<h1>Chi tiết Hồ sơ Nhân viên</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Nhân Viên</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.MaNhanVien)</dd>
+        <dt class="col-sm-3">Họ và Tên</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.HoTen)</dd>
+        <dt class="col-sm-3">Chức Vụ</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.ChucVu)</dd>
+        <dt class="col-sm-3">Mức Lương</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Luong)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaNhanVien" class="btn btn-warning">Sửa</a> |
+    <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+</div>

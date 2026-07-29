@@ -1,0 +1,40 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Khachhang25th2532
+
+@{
+    ViewData["Title"] = "Chi tiết hồ sơ khách hàng";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h3 class="card-title mb-0">Chi tiết Thông tin Khách hàng</h3>
+        </div>
+        <div class="card-body">
+            <h4 class="text-secondary border-bottom pb-2">Hồ sơ khách hàng</h4>
+            <dl class="row mt-3">
+                <dt class="col-sm-3 fw-bold">Mã Khách Hàng:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.MaKhachHang)</dd>
+
+                <dt class="col-sm-3 fw-bold">Họ và Tên:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.HoTen)</dd>
+
+                <dt class="col-sm-3 fw-bold">Số Điện Thoại:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.SoDienThoai)</dd>
+
+                <dt class="col-sm-3 fw-bold">Địa chỉ Email:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+                <dt class="col-sm-3 fw-bold">Số CCCD / Hộ chiếu:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.SoCCCD)</dd>
+            </dl>
+        </div>
+        <div class="card-footer bg-light text-end">
+            <a asp-action="Edit" asp-route-id="@Model?.MaKhachHang" class="btn btn-warning me-2">
+                <i class="bi bi-pencil-square"></i> Chỉnh sửa
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle"></i> Quay lại danh sách
+            </a>
+        </div>
+    </div>
+</div>

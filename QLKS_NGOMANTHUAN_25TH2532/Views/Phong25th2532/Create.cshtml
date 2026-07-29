@@ -1,0 +1,30 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Phong25th2532
+@{
+    ViewData["Title"] = "Tạo mới Phòng";
+}
+<h1>Tạo mới Phòng</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="SoPhong" class="control-label">Số Phòng</label>
+                <input asp-for="SoPhong" class="form-control" />
+                <span asp-validation-for="SoPhong" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="MaLoaiPhong" class="control-label">Mã Loại Phòng</label>
+                <select asp-for="MaLoaiPhong" class="form-control" asp-items="ViewBag.MaLoaiPhong"></select>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="MaTrangThai" class="control-label">Mã Trạng Thái</label>
+                <select asp-for="MaTrangThai" class="form-control" asp-items="ViewBag.MaTrangThai"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu Lại" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>

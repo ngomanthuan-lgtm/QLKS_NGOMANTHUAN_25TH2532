@@ -1,0 +1,22 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Chinhanh25th2532
+@{
+    ViewData["Title"] = "Xóa Chi nhánh";
+}
+<h1>Xóa Chi nhánh</h1>
+<h3>Bạn có chắc chắn muốn xóa chi nhánh này không?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Tên Chi Nhánh</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.TenChiNhanh)</dd>
+        <dt class="col-sm-3">Địa Chỉ</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DiaChi)</dd>
+        <dt class="col-sm-3">Số Điện Thoại</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.SoDienThoai)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaChiNhanh" />
+        <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </form>
+</div>

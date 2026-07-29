@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập hệ thống - Royal Hotel</title>
+    
+    <!-- Hệ thống CDN liên kết giao diện dự phòng tốc độ cao -->
+    <link rel="stylesheet" href="https://cloudflare.com" />
+    <link rel="stylesheet" href="https://cloudflare.com" />
+
+    <!-- Ép giao diện căn giữa tuyệt đối kể cả khi mất CSS ngoài -->
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1f4068, #162447, #0f172a) !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .login-card {
+            width: 420px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-primary mb-1"><i class="bi bi-hotel"></i> ROYAL HOTEL</h2>
+            <small class="text-muted text-uppercase fw-semibold" style="letter-spacing: 1px;">Hệ thống quản lý nội bộ</small>
+        </div>
+        
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger py-2 text-center" style="font-size: 0.9rem;">
+                <i class="bi bi-exclamation-circle-fill"></i> @ViewBag.Error
+            </div>
+        }
+
+        <form asp-action="Login" method="post">
+            <div class="mb-3">
+                <label class="form-label fw-bold text-secondary">Họ và tên nhân viên</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-person-fill text-muted"></i></span>
+                    <input type="text" name="hoten" class="form-control bg-light border-start-0" placeholder="Ví dụ: Ngô Văn Thuận" required />
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="form-label fw-bold text-secondary">Mã số nhân viên (Mật mã)</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-key-fill text-muted"></i></span>
+                    <input type="password" name="manhanvien" class="form-control bg-light border-start-0" placeholder="Nhập mã số nhân viên..." required />
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold text-uppercase shadow-sm" style="border-radius: 8px;">
+                <i class="bi bi-box-arrow-in-right"></i> Xác nhận đăng nhập
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

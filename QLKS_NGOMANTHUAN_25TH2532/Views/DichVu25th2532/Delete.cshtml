@@ -1,0 +1,20 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Dichvu25th2532
+@{
+    ViewData["Title"] = "Xóa dịch vụ";
+}
+<h1>Xóa Dịch vụ</h1>
+<h3>Bạn có chắc chắn muốn ngừng cung cấp dịch vụ này?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Tên Dịch Vụ</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.TenDichVu)</dd>
+        <dt class="col-sm-3">Giá Dịch Vụ</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.GiaDichVu)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaDichVu" />
+        <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </form>
+</div>

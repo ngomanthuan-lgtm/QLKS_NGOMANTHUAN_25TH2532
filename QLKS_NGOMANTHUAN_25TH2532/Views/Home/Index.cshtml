@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Trang Chủ - Hệ Thống Quản Lý";
+}
+
+<div class="hero-banner mb-5">
+    <div class="container-fluid max-width-container">
+        <div class="row align-items-center">
+
+            <!-- Cột trái: Văn bản và các tính năng cốt lõi -->
+            <div class="col-lg-6 col-md-12 mb-5 mb-lg-0">
+                <span class="badge bg-light text-primary px-3 py-2 rounded-pill fw-bold mb-3 text-uppercase" style="font-size: 0.75rem; letter-spacing: 0.5px;">Phần Mềm Quản Lý</span>
+                <h1 class="hero-title text-white mb-4" style="font-size: 2.8rem; font-weight: 800; line-height: 1.2;">KHÁCH SẠN –<br>RESORT PREMIUM</h1>
+
+                <ul class="feature-list my-4" style="list-style: none; padding-left: 0;">
+                    <li class="mb-3 d-flex align-items-center gap-2" style="font-size: 1.05rem;"><i class="bi bi-check-circle-fill text-info"></i> Giao diện phần mềm hiện đại, dễ dàng sử dụng.</li>
+                    <li class="mb-3 d-flex align-items-center gap-2" style="font-size: 1.05rem;"><i class="bi bi-check-circle-fill text-info"></i> Hỗ trợ phân quyền chặt chẽ nhân viên quản lý, người dùng.</li>
+                    <li class="mb-3 d-flex align-items-center gap-2" style="font-size: 1.05rem;"><i class="bi bi-check-circle-fill text-info"></i> Phần mềm hoạt động mượt mà trên mọi nền tảng.</li>
+                    <li class="mb-3 d-flex align-items-center gap-2" style="font-size: 1.05rem;"><i class="bi bi-check-circle-fill text-info"></i> Quản lý trực tuyến cho toàn bộ hệ thống khách sạn + resort.</li>
+                    <li class="mb-3 d-flex align-items-center gap-2" style="font-size: 1.05rem;"><i class="bi bi-check-circle-fill text-info"></i> Đầy đủ tính năng: Đặt phòng, dịch vụ, hóa đơn, phụ thu.</li>
+                </ul>
+
+                <div class="mt-4 pt-2">
+                    <a asp-controller="DatPhong25th2532" asp-action="Create" class="btn btn-ghost-white">
+                        <i class="bi bi-cart-plus"></i> Đặt Phòng Ngay
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cột phải: Hình ảnh đồ họa minh họa khách sạn -->
+            <div class="col-lg-6 col-md-12 hero-illustration text-center">
+                <!-- Sử dụng đường dẫn hình ảnh nội bộ trong project -->
+                <img src="~/images/hotel-banner.jpg" alt="Hotel Banner Illustration" class="img-fluid rounded-4 shadow" style="max-height: 380px; object-fit: contain; width: 100%;" />
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Phần nội dung dưới Banner: Các phím tắt truy cập nhanh -->
+<div class="container mt-4 mb-5">
+    <h3 class="text-dark fw-bold mb-4" style="font-size: 1.4rem;"><i class="bi bi-grid-fill text-primary"></i> Lối tắt quản lý hệ thống</h3>
+    <div class="row g-3">
+        <div class="col-6 col-md-3">
+            <a asp-controller="Phong25th2532" asp-action="Index" class="btn btn-light w-100 py-3 shadow-sm border text-dark fw-medium" style="border-radius: 12px;"><i class="bi bi-door-open text-primary fs-4 d-block mb-1"></i> Sơ đồ phòng</a>
+        </div>
+        <div class="col-6 col-md-3">
+            <a asp-controller="Khachhangs25th2532" asp-action="Index" class="btn btn-light w-100 py-3 shadow-sm border text-dark fw-medium slide-up" style="border-radius: 12px;"><i class="bi bi-people text-success fs-4 d-block mb-1"></i> Khách hàng</a>
+        </div>
+        <div class="col-6 col-md-3">
+            <a asp-controller="Hoadon25th2532" asp-action="Index" class="btn btn-light w-100 py-3 shadow-sm border text-dark fw-medium" style="border-radius: 12px;"><i class="bi bi-receipt text-danger fs-4 d-block mb-1"></i> Hóa đơn</a>
+        </div>
+        <div class="col-6 col-md-3">
+            <a asp-controller="PHUTHU25th2532" asp-action="Index" class="btn btn-light w-100 py-3 shadow-sm border text-dark fw-medium" style="border-radius: 12px;"><i class="bi bi-cash-coin text-warning fs-4 d-block mb-1"></i> Khoản phụ thu</a>
+        </div>
+    </div>
+</div>

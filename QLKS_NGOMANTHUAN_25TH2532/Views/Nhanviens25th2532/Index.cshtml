@@ -1,0 +1,37 @@
+@model IEnumerable<QLKS_NGOMANTHUAN_25TH2532.Models.Nhanvien25th2532>
+@{
+    ViewData["Title"] = "Danh sách Nhân viên";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Danh sách Nhân viên</h1>
+    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-person-plus-fill"></i> Thêm Nhân viên</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã NV</th>
+            <th>Họ Tên</th>
+            <th>Chức Vụ</th>
+            <th>Lương</th>
+            <th class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="fw-semibold">@Html.DisplayFor(modelItem => item.MaNhanVien)</td>
+                <td class="fw-medium text-dark">@Html.DisplayFor(modelItem => item.HoTen)</td>
+                <td><span class="badge bg-light text-dark border">@Html.DisplayFor(modelItem => item.ChucVu)</span></td>
+                <td class="text-primary fw-medium">@string.Format("{0:N0} đ", item.Luong)</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.MaNhanVien" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Sửa</a>
+                    <a asp-action="Details" asp-route-id="@item.MaNhanVien" class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.MaNhanVien" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

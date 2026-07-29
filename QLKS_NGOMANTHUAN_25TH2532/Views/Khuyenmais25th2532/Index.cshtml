@@ -1,0 +1,37 @@
+@model IEnumerable<QLKS_NGOMANTHUAN_25TH2532.Models.Khuyenmai25th2532>
+@{
+    ViewData["Title"] = "Danh sách Khuyến mãi";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Danh sách Khuyến mãi</h1>
+    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-tags-fill"></i> Thêm Khuyến mãi</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Khuyến Mãi</th>
+            <th>Tên Chương Trình</th>
+            <th>Ngày Bắt Đầu</th>
+            <th>Ngày Kết Thúc</th>
+            <th class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="fw-semibold">@Html.DisplayFor(modelItem => item.MaKhuyenMai)</td>
+                <td class="fw-medium text-purple">@Html.DisplayFor(modelItem => item.TenKhuyenMai)</td>
+                <td><i class="bi bi-calendar-event text-muted"></i> @Html.DisplayFor(modelItem => item.NgayBatDau)</td>
+                <td><i class="bi bi-calendar-x text-muted"></i> @Html.DisplayFor(modelItem => item.NgayKetThuc)</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.MaKhuyenMai" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Sửa</a>
+                    <a asp-action="Details" asp-route-id="@item.MaKhuyenMai" class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.MaKhuyenMai" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

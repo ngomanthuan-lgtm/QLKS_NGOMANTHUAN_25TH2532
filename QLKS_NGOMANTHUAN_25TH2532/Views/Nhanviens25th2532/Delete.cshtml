@@ -1,0 +1,22 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Nhanvien25th2532
+@{
+    ViewData["Title"] = "Xóa Nhân viên";
+}
+<h1>Xóa hồ sơ Nhân viên</h1>
+<h3>Bạn có thực sự chắc chắn muốn xóa nhân viên này?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Họ và Tên</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.HoTen)</dd>
+        <dt class="col-sm-3">Chức Vụ</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.ChucVu)</dd>
+        <dt class="col-sm-3">Mức Lương</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Luong)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaNhanVien" />
+        <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Chinhanh25th2532
+@{
+    ViewData["Title"] = "Sửa Chi nhánh";
+}
+<h1>Chỉnh sửa Thông tin Chi nhánh</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaChiNhanh" />
+            <div class="form-group mb-3">
+                <label asp-for="TenChiNhanh" class="control-label">Tên Chi Nhánh</label>
+                <input asp-for="TenChiNhanh" class="form-control" />
+                <span asp-validation-for="TenChiNhanh" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DiaChi" class="control-label">Địa Chỉ</label>
+                <input asp-for="DiaChi" class="form-control" />
+                <span asp-validation-for="DiaChi" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="SoDienThoai" class="control-label">Số Điện Thoại</label>
+                <input asp-for="SoDienThoai" class="form-control" />
+                <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>

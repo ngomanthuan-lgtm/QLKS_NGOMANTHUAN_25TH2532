@@ -1,0 +1,38 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Khachhang25th2532
+@{
+    ViewData["Title"] = "Sửa thông tin khách hàng";
+}
+<h1>Sửa Hồ sơ Khách hàng</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaKhachHang" />
+            <div class="form-group mb-3">
+                <label asp-for="HoTen" class="control-label">Họ và Tên</label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="SoDienThoai" class="control-label">Số Điện Thoại</label>
+                <input asp-for="SoDienThoai" class="form-control" />
+                <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="SoCCCD" class="control-label">Số CCCD</label>
+                <input asp-for="SoCCCD" class="form-control" />
+                <span asp-validation-for="SoCCCD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cập nhật" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>

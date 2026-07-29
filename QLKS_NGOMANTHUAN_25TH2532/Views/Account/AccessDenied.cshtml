@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Từ chối truy cập";
+}
+
+<div class="container mt-5 text-center">
+    <div class="p-5 my-4 bg-light rounded-3 shadow border border-danger">
+        <h1 class="display-4 text-danger fw-bold"><i class="bi bi-shield-lock-fill"></i> 403 - KHÔNG CÓ QUYỀN TRUY CẬP</h1>
+        <p class="lead mt-3 text-secondary">Xin lỗi, tài khoản của bạn thuộc phân hệ Nhân Viên và không có đủ thẩm quyền để truy cập vào tính năng Quản Lý này.</p>
+        <hr class="my-4">
+        <p>Vui lòng liên hệ với Admin hệ thống hoặc Giám đốc để biết thêm chi tiết.</p>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg"><i class="bi bi-house-door-fill"></i> Quay lại Trang chủ</a>
+    </div>
+</div>

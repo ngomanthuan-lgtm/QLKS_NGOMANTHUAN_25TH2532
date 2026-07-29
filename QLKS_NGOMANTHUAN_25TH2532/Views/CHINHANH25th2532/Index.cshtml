@@ -1,0 +1,37 @@
+@model IEnumerable<QLKS_NGOMANTHUAN_25TH2532.Models.Chinhanh25th2532>
+@{
+    ViewData["Title"] = "Danh sách Chi nhánh";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1>Danh sách Chi nhánh</h1>
+    <a asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Tạo mới Chi nhánh</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã Chi Nhánh</th>
+            <th>Tên Chi Nhánh</th>
+            <th>Địa Chỉ</th>
+            <th>Số Điện Thoại</th>
+            <th class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="fw-semibold">@Html.DisplayFor(modelItem => item.MaChiNhanh)</td>
+                <td>@Html.DisplayFor(modelItem => item.TenChiNhanh)</td>
+                <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                <td><i class="bi bi-telephone text-muted"></i> @Html.DisplayFor(modelItem => item.SoDienThoai)</td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.MaChiNhanh" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i> Sửa</a>
+                    <a asp-action="Details" asp-route-id="@item.MaChiNhanh" class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Chi tiết</a>
+                    <a asp-action="Delete" asp-route-id="@item.MaChiNhanh" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

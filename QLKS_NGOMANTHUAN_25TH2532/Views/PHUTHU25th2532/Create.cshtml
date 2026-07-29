@@ -1,0 +1,29 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Phuthu25th2532
+
+@{
+    ViewData["Title"] = "Tạo mới Phụ thu";
+}
+
+<h1>Tạo mới Khoản Phụ Thu</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="LyDoPhuThu" class="control-label">Lý Do Phụ Thu</label>
+                <input asp-for="LyDoPhuThu" class="form-control" />
+                <span asp-validation-for="LyDoPhuThu" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="SoTienPhuThu" class="control-label">Số Tiền Phụ Thu</label>
+                <input asp-for="SoTienPhuThu" class="form-control" />
+                <span asp-validation-for="SoTienPhuThu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu Lại" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+            </div>
+        </form>
+    </div>
+</div>

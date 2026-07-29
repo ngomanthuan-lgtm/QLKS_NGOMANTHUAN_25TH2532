@@ -1,0 +1,81 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Datphong25th2532
+@{
+    ViewData["Title"] = "Cập nhật phiếu đặt phòng";
+}
+
+<h1 class="mb-4">Chỉnh sửa Phiếu Đặt Phòng #@Model.MaDatPhong</h1>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <!-- Khóa chính ẩn bắt buộc phải có để Entity Framework tìm đúng bản ghi cần sửa -->
+    <input type="hidden" asp-for="MaDatPhong" />
+
+    <div class="row">
+        <!-- Cột trái: Thông tin khách hàng đặt -->
+        <div class="col-md-6 border-end pe-4">
+            <h5 class="text-secondary mb-3"><i class="bi bi-person-lines-fill"></i> Thông tin khách hàng đặt</h5>
+
+            <div class="form-group mb-3">
+                <label asp-for="HoTenNguoiDat" class="form-label fw-medium"></label>
+                <input asp-for="HoTenNguoiDat" class="form-control" placeholder="Nhập họ và tên..." />
+                <span asp-validation-for="HoTenNguoiDat" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NgaySinh" class="form-label fw-medium"></label>
+                <input asp-for="NgaySinh" class="form-control" type="date" />
+                <span asp-validation-for="NgaySinh" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="SoDienThoai" class="form-label fw-medium"></label>
+                <input asp-for="SoDienThoai" class="form-control" placeholder="Nhập số điện thoại liên hệ..." />
+                <span asp-validation-for="SoDienThoai" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="form-label fw-medium"></label>
+                <input asp-for="Email" class="form-control" type="email" placeholder="example@gmail.com" />
+                <span asp-validation-for="Email" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DiaChi" class="form-label fw-medium"></label>
+                <input asp-for="DiaChi" class="form-control" placeholder="Số nhà, tên đường, tỉnh/thành phố..." />
+                <span asp-validation-for="DiaChi" class="text-danger small"></span>
+            </div>
+        </div>
+
+        <!-- Cột phải: Thông tin giao dịch đặt phòng -->
+        <div class="col-md-6 ps-4">
+            <h5 class="text-secondary mb-3"><i class="bi bi-cash-stack"></i> Thông tin phiếu đặt & Đặt cọc</h5>
+
+            <div class="form-group mb-3">
+                <label asp-for="NgayDat" class="form-label fw-medium">Ngày giờ đặt phòng</label>
+                <input asp-for="NgayDat" class="form-control" type="datetime-local" />
+                <span asp-validation-for="NgayDat" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="TinhTrangDat" class="form-label fw-medium">Tình trạng phiếu đặt</label>
+                <input asp-for="TinhTrangDat" class="form-control" placeholder="Ví dụ: Đã xác nhận, Chờ xử lý..." />
+                <span asp-validation-for="TinhTrangDat" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label asp-for="TienDatCoc" class="form-label fw-medium"></label>
+                <div class="input-group">
+                    <input asp-for="TienDatCoc" class="form-control text-end fw-bold text-success" type="number" placeholder="0" />
+                    <span class="input-group-text bg-light">VNĐ</span>
+                </div>
+                <span asp-validation-for="TienDatCoc" class="text-danger small"></span>
+            </div>
+
+            <div class="d-flex gap-2 justify-content-end mt-5 pt-3 border-top">
+                <button type="submit" class="btn btn-warning"><i class="bi bi-save-fill"></i> Lưu Thay Đổi</button>
+                <a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left-short"></i> Quay lại</a>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+@model QLKS_NGOMANTHUAN_25TH2532.Models.Khuyenmai25th2532
+@{
+    ViewData["Title"] = "Xóa Khuyến mãi";
+}
+<h1>Xóa Chương trình Khuyến mãi</h1>
+<h3>Bạn có chắc chắn muốn xóa khuyến mãi này không?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Tên Khuyến Mãi</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.TenKhuyenMai)</dd>
+        <dt class="col-sm-3">Ngày Bắt Đầu</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NgayBatDau)</dd>
+        <dt class="col-sm-3">Ngày Kết Thúc</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NgayKetThuc)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaKhuyenMai" />
+        <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    </form>
+</div>

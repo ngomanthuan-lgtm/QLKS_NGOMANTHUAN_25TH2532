@@ -1,0 +1,22 @@
+﻿@model QLKS_NGOMANTHUAN_25TH2532.Models.Datphong25th2532
+@{
+    ViewData["Title"] = "Hủy Đặt Phòng";
+}
+<h1>Hủy / Xóa Phiếu Đặt Phòng</h1>
+<h3>Bạn có chắc muốn xóa thông tin đặt phòng này?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Mã Đặt Phòng</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.MaDatPhong)</dd>
+        <dt class="col-sm-3">Ngày Đặt</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.NgayDat)</dd>
+        <dt class="col-sm-3">Tình Trạng</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.TinhTrangDat)</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MaDatPhong" />
+        <input type="submit" value="Xác nhận Xóa" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+    </form>
+</div>
